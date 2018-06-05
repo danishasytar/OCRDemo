@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,81 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OCRDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Y2M-ek-9mL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJw-wY-YCx">
+                                <rect key="frame" x="105" y="452" width="164" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Scan" backgroundImage="activate-button.png">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startScan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mf6-TP-8fb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exe-x4-lzp">
+                                <rect key="frame" x="261" y="366" width="30" height="30"/>
+                                <state key="normal" title="Plus"/>
+                                <connections>
+                                    <action selector="plus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9FH-cx-sdv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qz0-Sl-ouW">
+                                <rect key="frame" x="76" y="366" width="62" height="30"/>
+                                <state key="normal" title="Minus"/>
+                                <connections>
+                                    <action selector="minus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y4u-Ky-jlM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aki-6u-xW6">
+                                <rect key="frame" x="160" y="296" width="55" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="exe-x4-lzp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="346" id="5Fk-AE-ICd"/>
+                            <constraint firstItem="qz0-Sl-ouW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="346" id="AH6-dl-G7i"/>
+                            <constraint firstItem="Y2M-ek-9mL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="G1u-Km-DxO"/>
+                            <constraint firstItem="oJw-wY-YCx" firstAttribute="top" secondItem="exe-x4-lzp" secondAttribute="bottom" constant="56" id="Rh6-aL-ccH"/>
+                            <constraint firstItem="qz0-Sl-ouW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="Thf-1T-T35"/>
+                            <constraint firstItem="oJw-wY-YCx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="105" id="V43-N7-Qzy"/>
+                            <constraint firstItem="Y2M-ek-9mL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YpD-iq-Fbs"/>
+                            <constraint firstItem="oJw-wY-YCx" firstAttribute="top" secondItem="qz0-Sl-ouW" secondAttribute="bottom" constant="56" id="ZRJ-2C-6Tz"/>
+                            <constraint firstItem="Aki-6u-xW6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="160" id="aed-rr-cn3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Y2M-ek-9mL" secondAttribute="bottom" id="c9s-ob-cdi"/>
+                            <constraint firstItem="oJw-wY-YCx" firstAttribute="top" secondItem="Aki-6u-xW6" secondAttribute="bottom" constant="135" id="jRg-CG-2iC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oJw-wY-YCx" secondAttribute="trailing" constant="106" id="kkv-3q-RJj"/>
+                            <constraint firstItem="exe-x4-lzp" firstAttribute="leading" secondItem="qz0-Sl-ouW" secondAttribute="trailing" constant="123" id="p4y-E2-nWD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Aki-6u-xW6" secondAttribute="trailing" constant="160" id="pVi-Zx-EXp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y2M-ek-9mL" secondAttribute="trailing" id="peH-wa-XXN"/>
+                            <constraint firstItem="exe-x4-lzp" firstAttribute="leading" secondItem="qz0-Sl-ouW" secondAttribute="trailing" constant="123" id="quC-Yu-fe8"/>
+                            <constraint firstItem="oJw-wY-YCx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="432" id="rIq-9I-tEN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oJw-wY-YCx" secondAttribute="bottom" constant="171" id="tmC-QM-umJ"/>
+                            <constraint firstItem="Aki-6u-xW6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="276" id="v1z-5S-A55"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="exe-x4-lzp" secondAttribute="trailing" constant="84" id="xWN-2p-Ltt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="Aki-6u-xW6" id="J3D-zw-Ejt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="95.802098950524751"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="activate-button.png" width="164" height="44"/>
+        <image name="main_bg.png" width="320" height="568"/>
+    </resources>
 </document>

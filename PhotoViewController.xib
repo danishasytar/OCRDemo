@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoViewController" customModule="Winapp" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="BKp-so-aVX" id="cHy-qJ-e1e"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_bg" translatesAutoresizingMaskIntoConstraints="NO" id="I86-DX-h3c">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BKp-so-aVX">
+                    <rect key="frame" x="0.0" y="127" width="375" height="540"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elr-o7-ClI">
+                    <rect key="frame" x="16" y="54" width="59" height="30"/>
+                    <state key="normal" title="Retake"/>
+                    <connections>
+                        <action selector="goBack:" destination="-1" eventType="touchUpInside" id="hTi-Nu-bgE"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DzK-m2-wG5">
+                    <rect key="frame" x="295" y="54" width="53" height="30"/>
+                    <state key="normal" title="Next"/>
+                    <connections>
+                        <action selector="button:" destination="-1" eventType="touchUpInside" id="QLP-gG-0ZT"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BKp-so-aVX" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="2vV-Ux-4ux"/>
+                <constraint firstItem="I86-DX-h3c" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="3cO-49-ywv"/>
+                <constraint firstItem="I86-DX-h3c" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5ZN-c3-fWc"/>
+                <constraint firstItem="BKp-so-aVX" firstAttribute="top" secondItem="elr-o7-ClI" secondAttribute="bottom" constant="43" id="ANy-aT-e1t"/>
+                <constraint firstItem="BKp-so-aVX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="107" id="HM7-3h-ZA6"/>
+                <constraint firstItem="DzK-m2-wG5" firstAttribute="leading" secondItem="elr-o7-ClI" secondAttribute="trailing" constant="220" id="LgR-Bl-nip"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="elr-o7-ClI" secondAttribute="trailing" constant="300" id="Lyc-6p-5wV"/>
+                <constraint firstItem="I86-DX-h3c" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="MhJ-tF-Rdc"/>
+                <constraint firstItem="elr-o7-ClI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="34" id="QyI-Te-Mte"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DzK-m2-wG5" secondAttribute="trailing" constant="27" id="YV7-Jd-MDF"/>
+                <constraint firstItem="I86-DX-h3c" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e6b-DE-EUe"/>
+                <constraint firstItem="BKp-so-aVX" firstAttribute="top" secondItem="DzK-m2-wG5" secondAttribute="bottom" constant="43" id="glj-FX-YD1"/>
+                <constraint firstItem="elr-o7-ClI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="iUx-Tm-Kzx"/>
+                <constraint firstItem="BKp-so-aVX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sHF-3G-wwK"/>
+                <constraint firstItem="DzK-m2-wG5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="34" id="vDJ-IP-jVF"/>
+                <constraint firstItem="BKp-so-aVX" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="zJe-mA-kxn"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="main_bg" width="320" height="568"/>
+    </resources>
+</document>

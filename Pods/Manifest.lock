@@ -1,0 +1,24 @@
+PODS:
+  - GPUImage (0.1.7)
+  - MBProgressHUD (1.1.0)
+  - TesseractOCRiOS (4.0.0)
+
+DEPENDENCIES:
+  - GPUImage
+  - MBProgressHUD
+  - TesseractOCRiOS
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - GPUImage
+    - MBProgressHUD
+    - TesseractOCRiOS
+
+SPEC CHECKSUMS:
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
+
+PODFILE CHECKSUM: d0d247c28e85ee35c41315c7b22e459c2b575fd7
+
+COCOAPODS: 1.5.0
