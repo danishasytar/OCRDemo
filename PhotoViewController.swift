@@ -50,11 +50,37 @@ class PhotoViewController: UIViewController, G8TesseractDelegate {
         
     }
     
+    fileprivate func processImageIC(_ image: UIImage) -> UIImage {
+        
+        let threshold = GPUImageLuminanceThresholdFilter()
+        threshold.threshold = 0.30 + thresholdoffset // for name
+        
+        return GPUImageAdaptiveThresholdFilter().image(byFilteringImage: image)
+        
+    }
+    
+    
+    fileprivate func processImage(_ image: UIImage) -> UIImage {
+        
+        let a = GPUImageLuminanceThresholdFilter()
+        a.threshold = 0.34
+        return a.image(byFilteringImage: image)
+        
+    }
+    
+    
+
     
     func execute() {
-        let ic = processImageIC(cropTextSection(image: IDCardToDetect, minY: 0.25, maxY: 0.35))
-        let name = processImage(cropTextSection(image: IDCardToDetect, minY: 0.56, maxY: 0.77))
-        let address = processImage(cropTextSection(image: IDCardToDetect, minY: 0.77, maxY: 0.99))
+//        let ic = processImageIC(cropTextSection(image: IDCardToDetect, minY: 0.25, maxY: 0.35))
+//        let name = processImage(cropTextSection(image: IDCardToDetect, minY: 0.56, maxY: 0.77))
+//        let address = processImage(cropTextSection(image: IDCardToDetect, minY: 0.77, maxY: 0.99))
+
+        IDCardToDetect = processImage(IDCardToDetect)
+        
+        let ic = cropTextSection(image: IDCardToDetect, minY: 0.24, maxY: 0.34)
+        let name = cropTextSection(image: IDCardToDetect, minY: 0.56, maxY: 0.77)
+        let address = cropTextSection(image: IDCardToDetect, minY: 0.77, maxY: 0.99)
         
         let extracticnum    = extractICNumber(ic)
         let extractname     = extractNameAdress(name)
@@ -92,35 +118,7 @@ class PhotoViewController: UIViewController, G8TesseractDelegate {
     }
     
     
-    fileprivate func processImageIC(_ image: UIImage) -> UIImage {
-        
-        let threshold = GPUImageLuminanceThresholdFilter()
-        threshold.threshold = 0.30 + thresholdoffset // for name
-        
-        let luminance = threshold.image(byFilteringImage: image)
-        
-        let threshold2 = GPUImageAdaptiveThresholdFilter()
-//        threshold2.blurRadiusInPixels = 4.0
-        
-        return threshold.image(byFilteringImage: image)
-        
-    }
-    
-    
-    fileprivate func processImage(_ image: UIImage) -> UIImage {
-        
-        let threshold = GPUImageLuminanceThresholdFilter()
-        threshold.threshold = 0.26 + CGFloat(thresholdoffset) // for name
-        
-        let luminance = threshold.image(byFilteringImage: image)
-        
-        let threshold2 = GPUImageAdaptiveThresholdFilter()
-//        threshold2.blurRadiusInPixels = 4.0
-        
-        return threshold.image(byFilteringImage: image)
-//        return image
-        
-    }
+
     
     func extractICNumber (_ image: UIImage) -> String {
         
